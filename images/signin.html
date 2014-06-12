@@ -1,0 +1,67 @@
+<html>
+<body>
+    <div class="temp-control">
+        <div id="show_startPage" class="toggle" data-page="startPage">Start</div>
+        <div id="show_signupPage" class="toggle" data-page="signupPage">Signup</div>
+        <div id="show_signupCompletePage" class="toggle" data-page="signupCompletePage">Complete</div>
+        <div id="show_loginPage" class="toggle" data-page="loginPage">Login</div>
+        <div id="show_forgotPasswordPage" class="toggle" data-page="forgotPasswordPage">Forgot</div>
+    </div>
+    <div id="startPage" class="container">
+        <div class="button-container">
+            <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button> <span style="color: #fff; text-align: center; display: block;">OR</span>
+
+            <button class="btn btn-lg btn-info btn-block" type="submit">Sign up</button>
+        </div>
+    </div>
+    <div id="signupPage" class="container">
+        <form class="form-signin" role="form">
+             <h3 class="form-signin-heading">Sign Up</h3>
+
+            <p id="emailValidation" class="validation-msg">email validation msg</p>
+            <input type="email" class="form-control" placeholder="Email address" required autofocus />
+            <p id="passwordValidation" class="validation-msg">password validation msg</p>
+            <input type="password" class="form-control input-pair-top" placeholder="Password" required />
+            <input type="password" class="form-control input-pair-bottom" placeholder="Confirm Password" required />
+            <div class="button-container">
+                <button class="btn btn-lg btn-info btn-block" type="submit">Sign up</button>
+            </div>
+        </form>
+    </div>
+    <div id="signupCompletePage" class="container">
+        <form class="form-signin" role="form">
+             <h3 class="form-signin-heading">Signup Complete</h3>
+
+            <div id="img-container">
+                <img src="https://raw.githubusercontent.com/hifromhenry/sa14/master/success-checkmark.png" />
+            </div>
+        </form>
+    </div>
+    <div id="loginPage" class="container">
+        <form class="form-signin" role="form">
+             <h3 class="form-signin-heading">Login</h3>
+
+            <div id="img-container">
+                <img src="https://raw.githubusercontent.com/hifromhenry/sa14/master/default-profile.png" />
+            </div>
+            <input type="email" class="form-control input-pair-top" placeholder="Email address" required autofocus />
+            <input type="password" class="form-control input-pair-bottom" placeholder="Password" required />
+            <input type="checkbox" value="remember-me" />Remember me
+            <div class="button-container">
+                <button class="btn btn-lg btn-info btn-block" type="submit">Sign In</button>
+            </div>
+        </form>
+    </div>
+    <div id="forgotPasswordPage" class="container">
+        <form class="form-signin" role="form">
+             <h3 class="form-signin-heading">I Forgot My Password</h3>
+
+            <input type="password" class="form-control input-pair-top" placeholder="Create new password" required autofocus />
+            <input type="password" class="form-control input-pair-bottom" placeholder="Confirm new password" required />
+            <div class="button-container">
+                <button class="btn btn-lg btn-info btn-block disabled" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

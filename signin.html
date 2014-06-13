@@ -1,48 +1,55 @@
-<html>
-<body>
-    <div class="temp-control">
-        <div id="show_startPage" class="toggle" data-page="startPage">Start</div>
-        <div id="show_signupPage" class="toggle" data-page="signupPage">Signup</div>
-        <div id="show_signupCompletePage" class="toggle" data-page="signupCompletePage">Complete</div>
-        <div id="show_loginPage" class="toggle" data-page="loginPage">Login</div>
-        <div id="show_forgotPasswordPage" class="toggle" data-page="forgotPasswordPage">Forgot</div>
-    </div>
-    <div id="startPage" class="container">
-        <div class="button-container">
-            <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button> <span style="color: #fff; text-align: center; display: block;">OR</span>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Affinimi Signin</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
-            <button class="btn btn-lg btn-info btn-block" type="submit">Sign up</button>
+    <!-- Custom styles for this template -->
+    <link href="./css/signin.css" rel="stylesheet">
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <div id="startPage" class="container">
+	    <img src='./images/not-loggedin-screen.png'/>
+        <div class="button-container">
+            <button class="btn btn-lg btn-info btn-block sign-in" type="submit">Sign in</button> <span style="color: #fff; text-align: center; display: block;">OR</span>
+
+            <button class="btn btn-lg btn-info btn-block sign-up" type="submit">Sign up</button>
         </div>
     </div>
     <div id="signupPage" class="container">
-        <form class="form-signin" role="form">
              <h3 class="form-signin-heading">Sign Up</h3>
-
+	    <form class="form-signin" role="form">
             <p id="emailValidation" class="validation-msg">email validation msg</p>
             <input type="email" class="form-control" placeholder="Email address" required autofocus />
             <p id="passwordValidation" class="validation-msg">password validation msg</p>
             <input type="password" class="form-control input-pair-top" placeholder="Password" required />
             <input type="password" class="form-control input-pair-bottom" placeholder="Confirm Password" required />
-            <div class="button-container">
-                <button class="btn btn-lg btn-info btn-block" type="submit">Sign up</button>
-            </div>
+	        <div class="button-container">
+	            <button class="btn btn-lg btn-info btn-block" type="submit">Sign up</button>
+	        </div>
         </form>
     </div>
     <div id="signupCompletePage" class="container">
         <form class="form-signin" role="form">
              <h3 class="form-signin-heading">Signup Complete</h3>
-
-            <div id="img-container">
-                <img src="https://raw.githubusercontent.com/hifromhenry/sa14/master/success-checkmark.png" />
-            </div>
         </form>
+        <div id="img-container">
+            <img src="./images/success-checkmark.png" />
+        </div>
     </div>
     <div id="loginPage" class="container">
         <form class="form-signin" role="form">
              <h3 class="form-signin-heading">Login</h3>
 
             <div id="img-container">
-                <img src="https://raw.githubusercontent.com/hifromhenry/sa14/master/default-profile.png" />
+                <img src="./images/default-profile.png" />
             </div>
             <input type="email" class="form-control input-pair-top" placeholder="Email address" required autofocus />
             <input type="password" class="form-control input-pair-bottom" placeholder="Password" required />
@@ -64,4 +71,27 @@
         </form>
     </div>
 </body>
+<script type="text/javascript">
+
+var currentPage = '';
+var defaultPage = '#startPage';
+
+function showPage(pageID) {
+    if (currentPage !== '') {
+	    $(currentPage).hide()
+    }
+    if (pageID != null && pageID !== '') {
+	    currentPage = pageID;
+	}
+	else {
+		currentPage = defaultPage;
+	}
+	$(currentPage).show();
+}
+
+showPage('#startPage');
+$('button.sign-in').click(function() { showPage('#loginPage'); });
+$('button.sign-up').click(function() { showPage('#signupPage'); });
+
+</script>
 </html>
